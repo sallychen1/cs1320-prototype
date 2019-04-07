@@ -1,0 +1,731 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #82addb 0%, #ebb2b1 100%);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.clock {
+  position: absolute;
+  top: 23%;
+  left: 25%;
+  right: 25%;
+}
+
+#date {
+  color: white;
+  text-align: center;
+  font-size: 5em;
+}
+
+#time {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+.switch__container {
+  position: absolute;
+  top: 60%;
+  right: 45%
+}
+
+.switch {
+  visibility: hidden;
+  position: absolute;
+  margin-left: -9999px;
+}
+
+.switch+label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.switch--shadow+label {
+  width: 120px;
+  height: 50px;
+  border-radius: 60px;
+}
+
+.switch--shadow+label:before,
+.switch--shadow+label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+
+.switch--shadow+label:before {
+  content: 'AM';
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 20px;
+  right: 1px;
+  background-color: teal;
+  border-radius: 60px;
+  transition: background 0.4s;
+}
+
+.switch--shadow+label:after {
+  width: 50px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+
+.switch--shadow:checked+label:before {
+  content: 'PM';
+  background-color: gray;
+
+}
+
+.switch--shadow:checked+label:after {
+  transform: translateX(80px);
+}
+
+
+.btn-group {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  right: 30%;
+  width: 60%;
+}
+
+
+.btn-group button {
+  background-color: white;
+  /* width: 20%; */
+  border: 1px solid darkgray;
+  padding: 15px 30px;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-group button:hover {
+  background-color: rgb(69, 69, 70);
+  color: white;
+}
+
+.btn-group #btn-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+
+.btn-group #btn-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group a {
+  text-decoration: none;
+  color: rgb(37, 38, 39);
+  font-size: 1em;
+  text-align: center;
+}
+
+.btn-group a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.title {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  right: 25%;
+  color: white;
+  text-align: center;
+  font-size: 5em;
+}
+
+.home {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+@media only screen and (max-width : 400px) {
+  .clock {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    right: 25%;
+  }
+
+  .switch__container {
+    position: absolute;
+    top: 70%;
+    left: 35%
+  }
+
+  .title {
+    top: 8%
+  }
+
+  .home {
+    top: 12%;
+  }
+
+  .btn-group {
+    position: absolute;
+    top: 90%;
+    left: 20%;
+  }
+
+
+  .btn-group button {
+    background-color: white;
+    border: 1px solid darkgray;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    text-align: center;
+  }
+
+}
+
+
+.todo-container {
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  right: 3%;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+
+.section1 {
+  width: 25%;
+  border: transparent;
+  border-width: 5px;
+}
+
+.section2 {
+  width: 25%;
+  border: transparent;
+  border-width: 5px;
+}
+
+.section3 {
+  width: 25%;
+  border: transparent;
+  border-width: 5px;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li * {
+  float: left;
+}
+
+li,
+h3 {
+  clear: both;
+  list-style: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.container button {
+  background: white;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+
+.new-task {
+  color: white;
+  font-weight: bold;
+  font-size: 1.6em;
+  border-bottom: 2px solid white;
+  padding: 1px;
+  margin-top: 1%;
+}
+
+#add {
+  padding: 0%;
+  margin: 0%;
+  background: none;
+  border: none;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+}
+
+input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  color: #888;
+  background: transparent;
+  border: none;
+}
+
+input[type="text"]:focus {
+  color: white;
+}
+
+.container label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+
+input#new-task {
+  float: left;
+}
+
+p>button:hover {
+  color: #0FC57C;
+}
+
+
+li {
+  overflow: hidden;
+  padding: 1em;
+  color: white;
+  display: flex;
+}
+
+li>input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 10px;
+}
+
+li>label {
+  font-size: 18px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+
+li>input[type="text"] {
+  width: 226px;
+}
+
+li>.delete:hover {
+  color: #CF2323;
+}
+
+#completed-tasks label {
+  text-decoration: line-through;
+  color: white;
+}
+
+ul li input[type=text] {
+  display: none;
+}
+
+ul li.editMode input[type=text] {
+  display: block;
+}
+
+ul li.editMode label {
+  display: none;
+}
+
+li button {
+  background: transparent;
+  border: none;
+  color: darkgray;
+  font-size: 1.5em;
+  color: rgb(100, 98, 98);
+}
+
+@media only screen and (max-width : 400px) {
+  .todo-container {
+    display: block;
+    left: 12%;
+    top: 20%;
+    font-size: 0.8em;
+  }
+
+  .section1,
+  .section2,
+  .section3 {
+    width: 80%;
+  }
+
+}
+
+
+
+
+.calendar-container clearfix ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.calendar-container {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  background-color: darkgray;
+
+}
+
+.calendar {
+  padding-right: 10px;
+  border-right: 1px solid #507480;
+  color: #fff;
+}
+
+
+.calendar-header {
+  color: white;
+  font-weight: 700;
+}
+
+.calendar-month {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  color: #1F8261;
+}
+
+.prev-month,
+.next-month {
+  position: absolute;
+  display: block;
+  width: 60px;
+  top: 50%;
+  color: #fff;
+  margin-top: -15px;
+  cursor: pointer;
+}
+
+.prev-month {
+  left: 0;
+}
+
+.next-month {
+  right: 0;
+}
+
+.calendar-weekdays clearfix {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.calendar-item {
+  float: left;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+}
+
+.calendar-item-day {
+  color: gray;
+}
+
+.calendar-item-date {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.calendar-item-date:hover {
+  background: rgba(255, 255, 255, .3);
+}
+
+.calendar-item.active {
+  font-weight: 600;
+  background: tomato;
+  cursor: default;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.schedule {
+  padding: 10px 15px;
+  color: #c9f2cf;
+}
+
+
+.wrap {
+  position: fixed;
+  top: 35%;
+  left: 15%;
+  right: 15%;
+  height: 40%;
+  padding: 10px;
+}
+
+.toolbar {
+  width: 100%;
+  margin-left: 20%;
+  margin-bottom: 2px;
+}
+
+.toolbar button {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.toolbar button:hover {
+  border: 1px solid #a6a6a6;
+  color: #777;
+}
+
+#bold,
+#italic,
+#underline {
+  font-size: 18px;
+}
+
+#underline,
+#align-right {
+  margin-right: 17px;
+}
+
+#align-left {
+  margin-left: 17px;
+}
+
+select {
+  height: 24px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #444;
+  background: #fcfcfc;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+select>option {
+  font-size: 15px;
+  background: #fafafa;
+}
+
+#fonts {
+  width: 140px;
+}
+
+.sp-replacer {
+  background: #fcfcfc;
+  padding: 1px 2px 1px 3px;
+  border-radius: 3px;
+  border-color: #a6a6a6;
+  margin-top: -1px;
+}
+
+.sp-replacer:hover {
+  border-color: #a6a6a6;
+  color: inherit;
+}
+
+.sp-preview {
+  width: 15px;
+  height: 15px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+.sp-preview-inner,
+.sp-alpha-inner,
+.sp-thumb-inner {
+  border-radius: 3px;
+}
+
+.editor {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fcfcfc;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-all;
+  outline: none;
+}
+
+#downloadbtn {
+  position: absolute;
+  margin-top: -5vh;
+  margin-left: 60vw;
+}
+
+@media only screen and (max-width : 400px) {
+
+  #downloadbtn {
+    margin-top: -6vh;
+    margin-left: 50vw;
+  }
+
+  .toolbar {
+    width: 120%;
+    margin-left: 0%;
+    margin-bottom: 2px;
+  }
+
+  .wrap {
+    top: 25%;
+  }
+
+  .editor {
+    height: 120%;
+  }
+
+  #list-ul {
+    display: none;
+  }
+
+  #list-ol {
+    display: none;
+  }
+
+}
+
+.cal {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  background-color: rgb(139, 138, 138);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.month {
+  width: 100%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 1.5em;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+}
+
+.month .next {
+  float: right;
+}
+
+.weekdays {
+  margin-left: 4%;
+  margin-right: 4%;
+  opacity: 0.7;
+  margin-bottom: 0px;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: white;
+  text-align: center;
+}
+
+.days {
+  padding: 3px;
+  font-weight: bold;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.days li {
+  display: inline-block;
+  padding: 0px;
+  width: 13.6%;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .weekdays li,
+  .days li {
+    width: 12.5%;
+  }
+
+  .days li .active {
+    padding: 2px;
+  }
+
+  .cal {
+    width: 80%;
+    left: 10%;
+  }
+}

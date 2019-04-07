@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Calendar</title>
+	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Schoolbell'/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class = "title">
+        <span style="font-family: 'SchoolBell'">Calendar</span>
+      </div>
+    <div class = "home">
+        <a href="index.html">
+            <span class="glyphicon glyphicon-home" style="font-size:3em;color:rgb(100, 98, 98)"></span>
+          </a>
+          <span style = "color: white;">PM:</span>
+        <input type="checkbox" placeholder="AM" onclick="changeColor()">
+    </div>
+
+    <div class = "cal">
+    <div class="month">   
+      <span class = "prev">&#10094;</span>  
+      <span>April 2019</span> 
+      <span class = "next">&#10095;</span>
+      </div>
+      
+      <ul class="weekdays">
+        <li>M</li>
+        <li>T</li>
+        <li>W</li>
+        <li>T</li>
+        <li>F</li>
+        <li>Sa</li>
+        <li>Su</li>
+      </ul>
+      <ul class="days">  
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li style = "background-color: blue; border-radius: 50%;">8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+        <button id = "btn-left"><a href="todo.html">To-do</a></button>
+        <button ><a href="cal.html">Calendar</a></button>
+        <button id = "btn-right"><a href="notes.html">Notes</a></button>
+      </div>
+
+      <script>
+       let am = 0;
+ function changeColor() {
+     if (am == 0) {
+         document.body.style.background = "linear-gradient(to bottom, #020111 10%,#3a3a52 100%)";
+         am = 1;
+     } else {
+         document.body.style.background = "linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%)";
+         am = 0;
+     }
+     
+  }
+ </script>
+    
+</body>
+   
+</html>

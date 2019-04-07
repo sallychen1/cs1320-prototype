@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Todo</title>
+    
+    <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Schoolbell'/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class = "title">
+      <span style="font-family: 'SchoolBell'">To-do</span>
+    </div>
+    <div class = "home">
+        <a href="index.html">
+          <span class="glyphicon glyphicon-home" style="font-size:3em;color:rgb(100, 98, 98)"></span>
+        </a>
+        <span style = "color: white;">PM:</span>
+        <input type="checkbox" placeholder="AM" onclick="changeColor()">
+    </div>
+    <div class="todo-container">
+
+        <div class = "section1">
+            <p class = "new-task">Add </p>
+            <div class = "items">
+            <div><input id="new-task" style="width:80%" type="text" placeholder="Any tasks?"></div>
+            <div><button style="width:20%" id = "add">Add</button></div>
+            </div>
+        </div>
+
+      <div class = "section2">
+          <p class = "new-task">Ongoing </p>
+            <ul id="incomplete-tasks">    
+            </ul>
+      </div>
+
+      <div class = "section3">
+          <p class = "new-task">Completed </p>
+            <ul id="completed-tasks">
+            </ul>
+      </div>
+
+    </div>
+    <div class="btn-group">
+        <button id = "btn-left"><a href="todo.html">To-do</a></button>
+        <button><a href="cal.html">Calendar</a></button>
+        <button id = "btn-right"><a href="notes.html">Notes</a></button>
+      </div>
+
+      
+
+    <script type="text/javascript" src="todo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	 crossorigin="anonymous">
+	</script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+   
+</html>
