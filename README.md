@@ -1,6 +1,6 @@
 
 # Overview
-This is the prototype of my hi-fi mockup from assignment 3, where I created a productivity web app consisting of to-do list, calendar, and notes tools
+This is the prototype of my hi-fi mockup from assignment 3
 
 ## Design Choices
  Here are the sources I referenced/used:

@@ -6,27 +6,30 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Schoolbell'/>
+	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Schoolbell' />
 </head>
 
 <body>
+	<div class="page-wrapper">
 
-	<div class="clock">
-		<div id="date"></div>
-		<div id="time" style="font-family: 'SchoolBell'"></div>
+		<div class="clock">
+			<div id="date"></div>
+			<div id="time" style="font-family: 'SchoolBell'"></div>
+		</div>
+
+		<div class="switch__container">
+			<input id="switch-shadow" class="switch switch--shadow" type="checkbox" onclick="changeColor()">
+			<label for="switch-shadow"></label>
+		</div>
+
+		<div class="home-btn-group">
+			<button id="btn-left"><a href="todo.html">To-do</a></button>
+			<button><a href="cal.html">Calendar</a></button>
+			<button id="btn-right"><a href="notes.html">Notes</a></button>
+		</div>
+
 	</div>
 
-	<div class="switch__container">
-		<input id="switch-shadow" class="switch switch--shadow" type="checkbox" onclick="changeColor()">
-		<label for="switch-shadow"></label>
-	</div>
-
-	<div class="btn-group">
-		<button id = "btn-left"><a href="todo.html">To-do</a></button>
-		<button><a href="cal.html">Calendar</a></button>
-		<button id = "btn-right"><a href="notes.html">Notes</a></button>
-	</div>
-	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	 crossorigin="anonymous">
 	</script>
